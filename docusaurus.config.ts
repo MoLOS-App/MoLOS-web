@@ -103,7 +103,7 @@ const config: Config = {
             { label: 'Why MoLOS?', to: '/docs/getting-started#why-molos' },
             { label: 'Core Modules', to: '/docs/modules/' },
             { label: 'FAQ', to: '/docs/getting-started/faq' },
-s          ],
+          ],
         },
         {
           title: 'Develop',
