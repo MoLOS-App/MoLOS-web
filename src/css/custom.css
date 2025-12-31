@@ -1,0 +1,91 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #0070f3;
+  --ifm-color-primary-dark: #0061d5;
+  --ifm-color-primary-darker: #005bc9;
+  --ifm-color-primary-darkest: #004ba5;
+  --ifm-color-primary-light: #3291ff;
+  --ifm-color-primary-lighter: #489dff;
+  --ifm-color-primary-lightest: #79b8ff;
+  --ifm-background-color: #ffffff;
+  --ifm-navbar-background-color: rgba(255, 255, 255, 0.8);
+  --ifm-footer-background-color: #fafafa;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.05);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #4dabf7;
+  --ifm-color-primary-dark: #3d8fe0;
+  --ifm-color-primary-darker: #3576c9;
+  --ifm-color-primary-darkest: #2a5a9e;
+  --ifm-color-primary-light: #6bb8ff;
+  --ifm-color-primary-lighter: #8ac4ff;
+  --ifm-color-primary-lightest: #c7e4ff;
+  --ifm-background-color: #121212;
+  --ifm-navbar-background-color: rgba(18, 18, 18, 0.8);
+  --ifm-footer-background-color: #1f1f1f;
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.05);
+}
+
+.molos-navbar-container {
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--ifm-z-index-fixed);
+  background: var(--ifm-navbar-background-color);
+  width: 100%;
+}
+
+.molos-navbar-container.visible {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.molos-navbar-container.hidden {
+  transform: translateY(-100%);
+  box-shadow: none;
+}
+
+/* Add padding to body to account for fixed navbar */
+:root {
+  --navbar-height: 60px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.molos-footer-custom {
+  background: var(--ifm-footer-background-color);
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  padding: 4rem 0;
+}
+
+.molos-doc-item {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.molos-search-wrapper {
+  margin-right: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

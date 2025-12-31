@@ -1,0 +1,69 @@
+.features {
+  display: flex;
+  align-items: center;
+  padding: 4rem 0;
+  width: 100%;
+}
+
+.featureCard {
+  padding: 2.5rem;
+  height: 100%;
+  background: rgba(var(--ifm-color-primary-rgb), 0.03);
+  border: 1px solid rgba(var(--ifm-color-primary-rgb), 0.1);
+  border-radius: 24px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.featureCard:hover {
+  transform: translateY(-8px);
+  background: rgba(var(--ifm-color-primary-rgb), 0.06);
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.featureIconWrapper {
+  color: var(--ifm-color-primary);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background: rgba(var(--ifm-color-primary-rgb), 0.1);
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.featureCard:hover .featureIconWrapper {
+  transform: scale(1.1) rotate(5deg);
+  background: var(--ifm-color-primary);
+  color: white;
+}
+
+.featureContent h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.featureContent p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ifm-color-emphasis-700);
+  margin: 0;
+}
+
+[data-theme='dark'] .featureCard {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .featureCard:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--ifm-color-primary);
+}
