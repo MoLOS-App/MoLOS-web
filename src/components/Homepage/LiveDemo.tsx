@@ -43,7 +43,7 @@ function LiveDemo() {
             ))}
           </motion.ul>
           <motion.div variants={fadeInVariants}>
-            <Link className={clsx(styles.primaryButton, "margin-top--lg")} style={{ display: 'inline-block' }} to="/docs/reference/architecture">
+            <Link className={clsx(styles.primaryButton, "margin-top--lg")} style={{ display: 'inline-block' }} to="/docs/module-development">
               Learn Architecture →
             </Link>
           </motion.div>
