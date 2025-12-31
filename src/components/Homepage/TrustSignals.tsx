@@ -64,7 +64,7 @@ function TrustSignals({ interactive = true }: TrustSignalsProps) {
         </motion.div>
         
         <motion.div className={styles.trustCTA} variants={fadeInVariants}>
-          <Link to="https://github.com/eduardez/MoLOS" className={styles.primaryButton}>
+          <Link to="https://github.com/MoLOS-App/MoLOS" className={styles.primaryButton}>
             See Our GitHub <ArrowRight size={20} className="margin-left--xs" />
           </Link>
         </motion.div>

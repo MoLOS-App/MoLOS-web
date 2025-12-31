@@ -13,7 +13,7 @@ MoLOS is built for extensibility. If you're a developer, you'll love the clean a
 
 ## Local Development
 
-1.  **Clone:** `git clone https://github.com/eduardez/MoLOS.git`
+1.  **Clone:** `git clone https://github.com/MoLOS-App/MoLOS.git`
 2.  **Install:** `npm install`
 3.  **Dev:** `npm run dev`
 
