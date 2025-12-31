@@ -1,6 +1,23 @@
-# Website
+# MoLOS
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+This is the showcase and documentation website for MoLOS, built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+
+Here you can find:
+- Comprehensive documentation for getting started with MoLOS
+- Blog posts about updates and features
+- Detailed guides for available modules like Tasks, Health, Finance, and more
+- Community resources and contribution guidelines
+
+## Running with Docker
+
+You can run the pre-built Docker image directly:
+
+```bash
+docker pull ghcr.io/molos-app/molos-web:latest
+docker run -p 3001:8080 ghcr.io/molos-app/molos-web:latest
+```
+
+This will start the website on `http://localhost:3001`.
 
 ## Installation
 
