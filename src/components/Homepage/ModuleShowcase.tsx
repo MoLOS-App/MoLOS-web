@@ -78,7 +78,7 @@ function ModuleShowcase({ interactive = true }: ModuleShowcaseProps) {
               </motion.div>
               <h3>{module.name}</h3>
               <p>{module.description}</p>
-              <Link to={idx === 3 ? "/docs/module-development/getting-started" : "/docs/getting-started"} className={styles.moduleLink}>
+              <Link to={idx === 3 ? "/docs/module-development" : "/docs/getting-started"} className={styles.moduleLink}>
                 {module.cta} <ArrowRight size={16} />
               </Link>
             </motion.div>

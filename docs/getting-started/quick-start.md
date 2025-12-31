@@ -69,5 +69,5 @@ import TabItem from '@theme/TabItem';
 Once MoLOS is running, open your browser and navigate to `http://localhost:4173` to start feeling it.
 
 :::info
-For advanced deployment options, including production hardening and monitoring, see the [Self-Hosting guide](/docs/deployment).
+For advanced deployment options, including production hardening and monitoring, see the [Self-Hosting guide](/docs/getting-started/).
 :::

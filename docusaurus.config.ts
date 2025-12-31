@@ -75,10 +75,9 @@ const config: Config = {
           label: 'Modules',
           position: 'left',
           items: [
-            {label: 'Overview', to: '/docs/modules/index'},
             {label: 'Tasks', to: '/docs/modules/tasks'},
             {label: 'Health', to: '/docs/modules/health'},
-            {label: 'Explore...', to: '/docs/modules/index'},
+            {label: 'More...', to: '/docs/modules/'},
           ],
         },
         {
@@ -102,16 +101,15 @@ const config: Config = {
           items: [
             { label: 'Quick Start', to: '/docs/getting-started' },
             { label: 'Why MoLOS?', to: '/docs/getting-started#why-molos' },
-            { label: 'Core Modules', to: '/docs/modules/index' },
+            { label: 'Core Modules', to: '/docs/modules/' },
             { label: 'FAQ', to: '/docs/getting-started/faq' },
-            { label: 'Migration Guide', to: '/docs/getting-started/migration-guides' },
-          ],
+s          ],
         },
         {
           title: 'Develop',
           items: [
             { label: 'Module Development', to: '/docs/module-development' },
-            { label: 'Plugin Gallery', to: '/docs/modules/index' },
+            { label: 'Plugin Gallery', to: '/docs/modules/' },
             { label: 'Contributing', to: '/docs/community/contributing' },
           ],
         },
@@ -129,7 +127,7 @@ const config: Config = {
           items: [
             { label: 'Finance', to: '/docs/modules/finance' },
             { label: 'Goals', to: '/docs/modules/goals' },
-            { label: 'All Modules', to: '/docs/modules/index' },
+            { label: 'All Modules', to: '/docs/modules/' },
           ],
         },
         {

@@ -41,4 +41,4 @@ This module provides:
 
 ---
 
-*See [Health Tracker](/modules/health-tracker) for detailed documentation.*
+*See [Health Tracker](/docs/modules/health) for detailed documentation.*
