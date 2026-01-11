@@ -36,7 +36,7 @@ function TrustSignals({ interactive = true }: TrustSignalsProps) {
             { icon: <GitPullRequestCreateArrow size={32} />, title: "GitHub Stars", text: "Come and give us a star! Or better, develop your own modules." },
             { icon: <LucideHardDriveUpload size={32} />, title: "Docker Deployments", text: "Easy install, easy delete. I know MoLOS is not for everyone so if you don't like it, just remove it." },
             { icon: <UsersIcon size={32} />, title: "Contributors", text: "I am always happy to see new contributors join the project. And I always have time for them." },
-            { icon: <TrendingUpIcon size={32} />, title: "Growing Daily", text: "At least a new module is developed everyday (or maintainers are working on them)." }
+            { icon: <TrendingUpIcon size={32} />, title: "Growing Daily", text: "At least one new module is being developed every day (or maintainers are working on them)." }
           ].map((card, idx) => (
             <motion.div
               key={idx}

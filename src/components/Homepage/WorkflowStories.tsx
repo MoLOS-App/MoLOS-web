@@ -43,7 +43,7 @@ function WorkflowStories({ interactive = true }: WorkflowStoriesProps) {
         variants={staggerContainerVariants}
       >
         <motion.div variants={fadeInVariants}>
-          <Heading as="h2" className={styles.sectionTitle}>Real Workflows</Heading>
+          <Heading as="h2" className={styles.sectionTitle}>Workflows</Heading>
         </motion.div>
         <motion.p className={styles.sectionSubtitle} variants={fadeInVariants}>
           Here's what you can actually do with MoLOS today.

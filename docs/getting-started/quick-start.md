@@ -23,7 +23,7 @@ import TabItem from '@theme/TabItem';
     ```yaml
     services:
       molos:
-        image: ghcr.io/eduardez/molos:latest
+        image: ghcr.io/molos-app/molos:latest
         ports:
           - '4173:4173'
         volumes:
@@ -57,7 +57,7 @@ import TabItem from '@theme/TabItem';
     Then run MoLOS:
 
     ```bash
-    docker run -p 4173:4173 -e BETTER_AUTH_SECRET=$BETTER_AUTH_SECRET ghcr.io/eduardez/molos:latest
+    docker run -p 4173:4173 -e BETTER_AUTH_SECRET=$BETTER_AUTH_SECRET ghcr.io/molos-app/molos:latest
     ```
 
     :::note

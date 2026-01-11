@@ -15,7 +15,7 @@ Find quick answers to common questions about MoLOS setup, features, and troubles
 | Question | Answer |
 |----------|--------|
 | **System requirements?** | Docker on Windows/macOS/Linux, or Node.js 18+ for local development. Works in any modern browser. |
-| **Quickest setup?** | Use Docker: `docker run -p 4173:4173 ghcr.io/eduardez/molos:latest` then visit http://localhost:4173 |
+| **Quickest setup?** | Use Docker: `docker run -p 4173:4173 ghcr.io/molos-app/molos:latest` then visit http://localhost:4173 |
 | **Data safety?** | All data stays local. No telemetry or external access. Complete privacy and control. |
 
 ## Core Features
@@ -59,7 +59,7 @@ import TabItem from '@theme/TabItem';
     1. Check logs: `docker logs <container-id>`
     2. Verify port availability: `lsof -i :4173`
     3. Try different port: `docker run -p 4174:4173 ...`
-    4. Remove and restart: `docker rm <id> && docker run -d -p 4173:4173 ghcr.io/eduardez/molos:latest`
+    4. Remove and restart: `docker rm <id> && docker run -d -p 4173:4173 ghcr.io/molos-app/molos:latest`
 
     **Data not persisting**
 
@@ -68,7 +68,7 @@ import TabItem from '@theme/TabItem';
     docker run -d \
       -p 4173:4173 \
       -v molos-data:/app/data \
-      ghcr.io/eduardez/molos:latest
+      ghcr.io/molos-app/molos:latest
     ```
 
     **Network access blocked**
