@@ -1,57 +1,48 @@
 ---
 title: AI Integration
-sidebar_position: 8
+sidebar_position: 10
 ---
 
 # AI Tools Integration
 
-MoLOS modules can provide custom tools that the **Architect Agent** uses to interact with module data.
+External modules can provide AI tools for the Architect Agent.
 
-## 1. Define AI Tools
-**Location**: `src/lib/ai/modules/{module}/ai-tools.ts`
+## Define AI Tools
 
-Create a function that returns an array of `ToolDefinition` objects.
+**Location**: `lib/server/ai/ai-tools.ts`
+
+Export `getAiTools(userId)` and return `ToolDefinition[]`.
 
 ```typescript
-import { MyRepository } from '../../../repositories/mymodule/myRepository';
-import type { ToolDefinition } from '$lib/models/ai';
+import { TaskRepository } from '$lib/repositories/external_modules/MoLOS-Tasks/task-repository';
+import type { ToolDefinition } from '$lib/models/external_modules/MoLOS-Tasks';
+import { db } from '$lib/server/db';
 
-export function getModuleAiTools(userId: string): ToolDefinition[] {
-	const repo = new MyRepository();
+export function getAiTools(userId: string): ToolDefinition[] {
+	const repo = new TaskRepository(db as any);
 
 	return [
 		{
-			name: 'get_my_items',
-			description: 'Retrieve items for the current user.',
+			name: 'get_tasks',
+			description: 'Retrieve tasks for the current user.',
 			parameters: {
 				type: 'object',
-				properties: {
-					limit: { type: 'number', default: 10 }
-				}
+				properties: { limit: { type: 'number', default: 10 } }
 			},
-			execute: async (params) => {
-				return await repo.getByUserId(userId, params.limit);
-			}
+			execute: async (params) => repo.getByUserId(userId, params.limit)
 		}
 	];
 }
 ```
 
-## 2. Register Tools
-In your `config.ts`, add the `getAiTools` property:
+## How MoLOS Loads Tools
 
-```typescript
-import { getModuleAiTools } from '../../../ai/modules/mymodule/ai-tools';
-
-export const myModuleConfig: ModuleConfig = {
-	id: 'mymodule',
-	// ... other config
-	getAiTools: getModuleAiTools
-};
-```
+- Tools are discovered from `lib/server/ai/ai-tools.ts` in external modules.
+- Tool names are automatically prefixed with `<ModuleId>_`.
 
 ## Key Rules
+
 1. **Naming**: Use `snake_case` for tool names (e.g., `create_task`).
-2. **Descriptions**: Provide clear, concise descriptions for the LLM.
-3. **User Isolation**: Always use the provided `userId` in repository calls.
-4. **Safety**: Ensure tools return enough information for the agent to explain the result.
+2. **Descriptions**: Keep them short and unambiguous.
+3. **User Isolation**: Always scope calls to `userId`.
+4. **Safety**: Return enough data for the agent to explain outcomes.

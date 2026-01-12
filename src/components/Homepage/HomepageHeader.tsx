@@ -27,7 +27,7 @@ function HomepageHeader() {
   -e BETTER_AUTH_SECRET=${secret} \\ # YOU WILL NEED TO GENERATE YOUR OWN SECRET
   -p 4173:4173 \\
   -v molos_data:/app/data \\
-  ghcr.io/eduardez/molos:latest`;
+  ghcr.io/molos-app/molos:latest`;
     await navigator.clipboard.writeText(command);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
@@ -179,7 +179,8 @@ function HomepageHeader() {
           </Link>
           <Link
             className={styles.secondaryButton}
-            to="/docs/module-development">
+            target='_blank'
+            to="https://demo.molos.app">
             Live Demo
           </Link>
         </motion.div>
@@ -188,7 +189,11 @@ function HomepageHeader() {
           No credit card required. Runs on your laptop or server.
         </motion.p>
 
-        <motion.div className={styles.heroDockerContainer} variants={fadeInVariants}>
+        <motion.div
+          id="quick-install"
+          className={styles.heroDockerContainer}
+          variants={fadeInVariants}
+        >
           <div className={styles.heroDockerHeader}>
             <div className={styles.terminalLeft}>
               <span style={{ color: '#aaa', fontSize: '0.75rem', marginLeft: '0.5rem', fontFamily: 'var(--ifm-font-family-monospace)' }}>Quick Install</span>
@@ -204,7 +209,7 @@ function HomepageHeader() {
   -e BETTER_AUTH_SECRET=${secret.substring(0, 8)}... \\ # GENERATE YOUR OWN SECRET!
   -p 4173:4173 \\
   -v molos_data:/app/data \\
-  ghcr.io/eduardez/molos:latest`}
+  ghcr.io/molos-app/molos:latest`}
             </code>
           </pre>
         </motion.div>

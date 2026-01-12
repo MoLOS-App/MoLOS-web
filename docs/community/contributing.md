@@ -6,5 +6,5 @@ sidebar_label: Contributing
 
 
 :::info
-Placeholder
+This is still under active writting
 :::

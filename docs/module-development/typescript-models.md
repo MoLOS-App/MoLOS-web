@@ -5,7 +5,7 @@ sidebar_position: 3
 
 # TypeScript Models
 
-**Location**: `src/lib/models/{module-name}/index.ts`
+**Location**: `lib/models/index.ts` (inside your module repo)
 
 Define interfaces that mirror your database schema and create input types for mutations.
 
@@ -38,5 +38,5 @@ export type UpdateItemInput = Partial<Omit<CreateItemInput, 'userId'>>;
 
 ## Best Practices
 - **Consistency**: Field names and types must match the database schema exactly.
-- **Enums**: Define enums as `(typeof Enum)[keyof typeof Enum]` for maximum type safety.
+- **Enums**: Define enums as `(typeof Enum)[keyof typeof Enum]`.
 - **Timestamps**: Always include `createdAt` and `updatedAt` as `number`.

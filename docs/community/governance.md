@@ -6,5 +6,5 @@ sidebar_label: Governance
 
 
 :::info
-Placeholder
+"The heroic story of a dictator who risks his life to ensure that democracy would never come to the country he so lovingly oppressed."
 :::
