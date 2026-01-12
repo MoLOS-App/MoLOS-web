@@ -35,14 +35,14 @@ const sidebars: SidebarsConfig = {
       collapsed: true,
           items: [
             'module-development/index',
+            'module-development/configuration',
             'module-development/database-schema',
             'module-development/typescript-models',
             'module-development/repository-layer',
             'module-development/api-endpoints',
             'module-development/ui-development',
-            'module-development/configuration',
-            'module-development/llm-instructions',
             'module-development/ai-integration',
+            'module-development/llm-instructions',
           ],
     },
     {
@@ -70,6 +70,16 @@ const sidebars: SidebarsConfig = {
         'community/governance',
         'community/code-of-conduct',
         'community/testimonials',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Tools',
+      collapsible: true,
+      collapsed: true,
+      items: [
+        'tools/module-management-tui',
+        'tools/llm-instructions',
       ],
     },
   ],
