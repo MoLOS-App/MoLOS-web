@@ -1,5 +1,6 @@
 name = "molos-web"
 compatibility_date = "2026-01-12"
+workers_dev = false
 
 [assets]
 directory = "./build"
