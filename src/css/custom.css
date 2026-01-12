@@ -89,3 +89,222 @@ html {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+:root {
+  --molos-cookie-banner-bg: #fff6e6;
+  --molos-cookie-banner-border: rgba(122, 74, 28, 0.15);
+  --molos-cookie-banner-text: #5a3a16;
+  --molos-cookie-banner-button-bg: #5a3a16;
+  --molos-cookie-banner-button-text: #ffffff;
+  --molos-cookie-banner-shadow: rgba(122, 74, 28, 0.2);
+}
+
+[data-theme='dark'] {
+  --molos-cookie-banner-bg: #2a2016;
+  --molos-cookie-banner-border: rgba(245, 202, 132, 0.2);
+  --molos-cookie-banner-text: #f7d6a1;
+  --molos-cookie-banner-button-bg: #f0b35a;
+  --molos-cookie-banner-button-text: #1c140c;
+  --molos-cookie-banner-shadow: rgba(0, 0, 0, 0.35);
+}
+
+.molos-cookie-banner {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translateX(-50%);
+  width: min(92vw, 640px);
+  padding: 0 1rem;
+  z-index: calc(var(--ifm-z-index-fixed) + 1);
+}
+
+.molos-cookie-banner__inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1.2rem;
+  border-radius: 999px;
+  background: var(--molos-cookie-banner-bg);
+  border: 1px solid var(--molos-cookie-banner-border);
+  box-shadow: 0 14px 30px var(--molos-cookie-banner-shadow);
+  animation: molos-banner-in 0.5s ease;
+}
+
+.molos-cookie-banner__text {
+  margin: 0;
+  color: var(--molos-cookie-banner-text);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  flex: 1 1 auto;
+}
+
+.molos-cookie-banner__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.molos-cookie-banner__button {
+  border: 0;
+  background: var(--molos-cookie-banner-button-bg);
+  color: var(--molos-cookie-banner-button-text);
+  padding: 0.45rem 0.95rem;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+
+.molos-cookie-banner__button--ghost {
+  background: transparent;
+  color: var(--molos-cookie-banner-text);
+  border: 1px solid var(--molos-cookie-banner-border);
+}
+
+.molos-cookie-banner.is-exiting .molos-cookie-banner__inner {
+  animation: molos-banner-out 0.35s ease forwards;
+}
+
+.molos-cookie-banner.is-shattering .molos-cookie-banner__inner {
+  animation: molos-banner-shatter 0.6s ease forwards;
+}
+
+.molos-cookie-banner.is-shattering .molos-cookie-banner__cookie {
+  animation: molos-cookie-crack 0.6s ease forwards;
+}
+
+.molos-cookie-banner__button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+.molos-cookie-banner__cookie {
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #f6d19a 0, #e6ab5b 55%, #c9853d 100%);
+  box-shadow: inset -4px -6px 0 rgba(0, 0, 0, 0.08);
+  flex: 0 0 auto;
+  animation: molos-cookie-bounce 2.8s ease-in-out infinite;
+  overflow: hidden;
+}
+
+.molos-cookie-banner__cookie::before {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #7a4b1f;
+  top: 10px;
+  left: 14px;
+  box-shadow: 12px 6px 0 #7a4b1f, 2px 16px 0 #7a4b1f, 16px 20px 0 #7a4b1f, -2px 24px 0 #7a4b1f;
+}
+
+.molos-cookie-banner__cookie::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  border: 1px dashed rgba(0, 0, 0, 0.18);
+  opacity: 0.5;
+  animation: molos-cookie-spin 6s linear infinite;
+}
+
+.molos-cookie-banner__bite {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--molos-cookie-banner-bg);
+  opacity: 0;
+  transform: scale(0.6);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.molos-cookie-banner__bite.is-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.molos-cookie-banner__bite:nth-child(1) {
+  top: -2px;
+  right: 6px;
+}
+
+.molos-cookie-banner__bite:nth-child(2) {
+  top: 10px;
+  right: -4px;
+}
+
+.molos-cookie-banner__bite:nth-child(3) {
+  bottom: 8px;
+  right: 2px;
+}
+
+.molos-cookie-banner__bite:nth-child(4) {
+  top: 4px;
+  left: -2px;
+}
+
+@keyframes molos-cookie-bounce {
+  0%, 100% { transform: rotate(-6deg) translateY(0); }
+  50% { transform: rotate(8deg) translateY(-6px); }
+}
+
+@keyframes molos-banner-in {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes molos-banner-out {
+  from { opacity: 1; transform: translateY(0) scale(1); }
+  to { opacity: 0; transform: translateY(16px) scale(0.98); }
+}
+
+@keyframes molos-banner-shatter {
+  0% { opacity: 1; transform: translateY(0) scale(1); }
+  30% { transform: translateY(-6px) rotate(-1deg) scale(1.02); }
+  100% { opacity: 0; transform: translateY(24px) rotate(2deg) scale(0.94); filter: blur(2px); }
+}
+
+@keyframes molos-cookie-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes molos-cookie-crack {
+  0% { transform: rotate(0deg) scale(1); }
+  40% { transform: rotate(8deg) scale(1.05); }
+  100% { transform: rotate(-12deg) scale(0.8); opacity: 0; }
+}
+
+@media (max-width: 640px) {
+  .molos-cookie-banner {
+    left: 0;
+    right: 0;
+    transform: none;
+  }
+
+  .molos-cookie-banner__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    border-radius: 18px;
+    gap: 0.65rem;
+  }
+
+  .molos-cookie-banner__actions {
+    width: 100%;
+  }
+
+  .molos-cookie-banner__button {
+    align-self: stretch;
+    text-align: center;
+  }
+}

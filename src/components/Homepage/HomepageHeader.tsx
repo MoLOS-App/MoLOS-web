@@ -189,7 +189,11 @@ function HomepageHeader() {
           No credit card required. Runs on your laptop or server.
         </motion.p>
 
-        <motion.div className={styles.heroDockerContainer} variants={fadeInVariants}>
+        <motion.div
+          id="quick-install"
+          className={styles.heroDockerContainer}
+          variants={fadeInVariants}
+        >
           <div className={styles.heroDockerHeader}>
             <div className={styles.terminalLeft}>
               <span style={{ color: '#aaa', fontSize: '0.75rem', marginLeft: '0.5rem', fontFamily: 'var(--ifm-font-family-monospace)' }}>Quick Install</span>
