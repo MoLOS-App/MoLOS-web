@@ -6,5 +6,5 @@ sidebar_label: Testimonials
 
 
 :::info
-Placeholder
+My father said it looks nice
 :::

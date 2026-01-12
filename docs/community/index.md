@@ -6,5 +6,5 @@ description: Join the MoLOS community, contribute, and build together
 # Community & Contributing
 
 :::info
-Placeholder
+This is not a placeholder
 :::
