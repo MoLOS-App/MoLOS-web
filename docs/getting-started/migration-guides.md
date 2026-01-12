@@ -12,3 +12,6 @@ Switching to MoLOS from another app? We've got you covered. Below are guides for
 :::warning
 Still working on this, maybe I will do it by module or something?
 :::
+
+![Not yet](/img/not_so_relevant_images/days_since.png)
+
