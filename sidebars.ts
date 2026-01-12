@@ -40,6 +40,8 @@ const sidebars: SidebarsConfig = {
             'module-development/api-endpoints',
             'module-development/ui-development',
             'module-development/configuration',
+            'module-development/llm-instructions',
+            'module-development/ai-module-guidelines',
             'module-development/ai-integration',
           ],
     },
