@@ -21,9 +21,10 @@ Get started by:
 - **[Running an instance](./quick-start.md)**: Run MoLOS in seconds using Docker/Podman.
 - **[Explore Core Modules](./core-modules.md)**: Learn about Tasks, Knowledge, and Routines modules.
 - **[Setting up a Developer Setup](./developer-setup.md)**: Set up your local development environment and start creating.
+- **[Meet The Architect](./the-architect.md)**: The AI agent that connects modules.
 
 ---
 
 ## Why MoLOS?
 
-I'll be honest with you. Like everyone else, I have used Notion, Obsidian, Notepad++, DSNotes... But I spent more time setting it up, creating the templates, organizing every note I had... Everything but using it. This is my take on that: A predefined second brain you just have to use and not configure.
+I'll be honest with you. Like everyone else, I have used Notion, Obsidian, Notepad++, DSNotes... But I spent more time setting it up, creating the templates, organizing every note I had... Everything but using it. This is my take on that: A predefined multitool and modular app you just have to use and not configure. All of it interconnected via the Architect.
