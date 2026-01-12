@@ -179,7 +179,8 @@ function HomepageHeader() {
           </Link>
           <Link
             className={styles.secondaryButton}
-            to="/docs/module-development">
+            target='_blank'
+            to="https://demo.molos.app">
             Live Demo
           </Link>
         </motion.div>
