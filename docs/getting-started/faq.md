@@ -24,9 +24,9 @@ This table shows how to use MoLOS when you have a question in mind.
 
 | Question | Module | Purpose |
 |----------|--------|---------|
-| I don't know what I have for today | Dashboard | Ask your AI what's going on with your life |
-| I have no money for pizza | Finance | See where you have spent your last 20 dollars |
-| I can't remember what my vision board was for this year | Goals | Remember what you promised to yourself |
+| I don't know what I have for today | Dashboard | See what's going on with your life |
+| I have no money for pizza | Finance | Remember where you have spent your last 20 dollars |
+| I can't remember what my vision board was for this year | Goals | You promised to yourself something, don't forget that |
 | Why don't my muscles grow? | Health | See your last flat bench PR and your protein intake |
 | What was that delicious meal I made yesterday? | Meals | Save and improve your recipes |
 | I had something important to do today but I can't remember what it was... | Tasks | Remember important things to do |
@@ -36,7 +36,7 @@ This table shows how to use MoLOS when you have a question in mind.
 | Question | Answer |
 |----------|--------|
 | **Data storage?** | Local SQLite database. No cloud sync by default. |
-| **Export data?** | Yes, supports JSON, Markdown, and CSV formats. |
+| **Export data?** | Not yet, but in the next release. It will support JSON, Markdown, and CSV formats. |
 | **Backup options?** | Automated database snapshots every nigth. |
 
 ## Common Issues
@@ -46,7 +46,7 @@ This table shows how to use MoLOS when you have a question in mind.
 | **Port 4173 in use** | Change port: `docker run -p 4174:4173 ...` |
 | **Database locked** | Ensure only one instance runs or change the mount volume. |
 | **Slow performance** | Restart container, check resources. |
-| **Container exits** | Check logs: `docker logs <id>`. Common causes: port conflicts or permission issues. |
+| **Container exits** | Check logs: `docker logs molos` or `docker logs <id>`. Common causes: port conflicts or permission issues. |
 
 ### Detailed Troubleshooting
 
