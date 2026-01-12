@@ -27,5 +27,4 @@ This guide covers external modules that live as separate git repos under `MoLOS/
 5.  **[UI Development](./ui-development)**: Create routes, components, and stores.
 6.  **[Module Configuration](./configuration)**: Manifest + navigation config.
 7.  **[LLM Instructions](./llm-instructions)**: Exact rules and templates for AI agents.
-8.  **[AI Module Guidelines](./ai-module-guidelines)**: Rules for AI-assisted module creation.
 9.  **[AI Integration](./ai-integration)**: Optional AI tools for the Architect Agent.
