@@ -5,10 +5,10 @@ sidebar_position: 6
 
 # UI Development
 
-UI development in MoLOS involves Svelte components, SvelteKit routes, and reactive state management.
+UI development in MoLOS uses Svelte routes inside the module repo.
 
 ## 1. State Management (Stores)
-**Location**: `src/lib/stores/modules/{module-name}/index.ts`
+**Location**: `lib/stores/`
 
 Use Svelte stores to manage global module state and data fetching.
 
@@ -21,7 +21,7 @@ export const uiState = writable({ loading: false, error: null });
 export async function loadData() {
 	uiState.update(s => ({ ...s, loading: true, error: null }));
 	try {
-		const response = await fetch('/api/mymodule');
+		const response = await fetch('/api/MoLOS-Example');
 		const data = await response.json();
 		items.set(data);
 	} catch (err) {
@@ -33,7 +33,7 @@ export async function loadData() {
 ```
 
 ## 2. Components
-**Location**: `src/lib/components/modules/{module-name}/`
+**Location**: `lib/components/`
 
 Build reusable UI pieces using Svelte and Tailwind CSS.
 
@@ -49,8 +49,8 @@ Build reusable UI pieces using Svelte and Tailwind CSS.
 ```
 
 ## 3. Routes & Layouts
-**Location**: `src/routes/ui/(modules)/{module-name}/`
+**Location**: `routes/ui/`
 
-- **`+layout.svelte`**: Defines the module's shell (sidebar, header).
+- **`+layout.svelte`**: Defines the module shell if needed.
 - **`dashboard/+page.svelte`**: The primary view for the module.
-- **`+page.svelte`**: Root route, typically performs a `goto('/ui/mymodule/dashboard')`.
+- **`+page.svelte`**: Root route, typically redirects to `/ui/<ModuleId>/dashboard`.

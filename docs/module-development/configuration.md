@@ -5,52 +5,42 @@ sidebar_position: 7
 
 # Module Configuration
 
-**Location**: `src/lib/config/modules/{module-name}/config.ts`
+**Location**: `config.ts` and `manifest.yaml` in your module repo.
 
-Register your module and its navigation structure within the MoLOS ecosystem.
+External modules are discovered automatically from `external_modules/`, so you do not edit the core registry.
 
 ## Configuration Example
 
 ```typescript
 import { LayoutDashboard, Settings, ListTodo } from 'lucide-svelte';
-import type { ModuleConfig } from '../types';
+import type { ModuleConfig } from '$lib/config/types';
 
 export const myModuleConfig: ModuleConfig = {
 	name: 'My Module',
-	id: 'mymodule',
+	id: 'MoLOS-Example',
+	href: '/ui/MoLOS-Example',
 	icon: ListTodo,
-	color: '#4CAF50',
+	description: 'Short module description',
 	navigation: [
 		{
-			id: 'dashboard',
-			title: 'Dashboard',
-			href: '/ui/mymodule/dashboard',
+			name: 'Dashboard',
+			href: '/ui/MoLOS-Example/dashboard',
 			icon: LayoutDashboard
 		},
 		{
-			id: 'settings',
-			title: 'Settings',
-			href: '/ui/mymodule/settings',
+			name: 'Settings',
+			href: '/ui/MoLOS-Example/settings',
 			icon: Settings
 		}
 	]
 };
-```
 
-## Registration
-
-Add your configuration to the central registry in `src/lib/config/modules/index.ts`:
-
-```typescript
-import { myModuleConfig } from './mymodule/config';
-
-export const modules = [
-	// ... other modules
-	myModuleConfig
-];
+export const moduleConfig = myModuleConfig;
+export default myModuleConfig;
 ```
 
 ## Key Rules
 - **Unique ID**: Ensure the `id` is unique across all modules.
 - **Icons**: Use Lucide-Svelte icons for consistency.
 - **Type Safety**: Always implement the `ModuleConfig` interface.
+- **Manifest**: `manifest.yaml` must match the module ID and include semver.
