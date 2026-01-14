@@ -154,7 +154,10 @@ function HomepageHeader() {
           </Heading>
         </motion.div>
         <motion.p className={styles.heroSubtitle} variants={fadeInVariants}>
-          Because you've got better things to do than spend hours optimizing your notes.
+          The definitive Modular Life Organization System (MoLOS)
+        </motion.p>
+        <motion.p  variants={fadeInVariants}>
+          Created because you've got better things to do than spend hours optimizing your notes.
         </motion.p>
 
         <motion.div className={styles.heroFeatures} variants={staggerContainerVariants}>
