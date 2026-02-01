@@ -25,6 +25,7 @@ const sidebars: SidebarsConfig = {
         'getting-started/core-modules',
         'getting-started/faq',
         'getting-started/the-architect',
+        'getting-started/telegram-integration',
         'getting-started/migration-guides',
       ],
     },
