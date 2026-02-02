@@ -42,7 +42,7 @@ function HomepageHeader() {
   const copyCommand = async () => {
     const command = `docker run -d \\
   --name molos \\
-  -e BETTER_AUTH_SECRET=${secret} \\ # YOU WILL NEED TO GENERATE YOUR OWN SECRET
+  -e BETTER_AUTH_SECRET=${secret} \\
   -p 4173:4173 \\
   -v molos_data:/app/data \\
   ghcr.io/molos-app/molos:latest`;
@@ -258,7 +258,7 @@ function HomepageHeader() {
             <code>
               {`docker run -d \\
   --name molos \\
-  -e BETTER_AUTH_SECRET=${secret.substring(0, 8)}... \\ # GENERATE YOUR OWN SECRET!
+  -e BETTER_AUTH_SECRET=${secret.substring(0, 8)}... \\
   -p 4173:4173 \\
   -v molos_data:/app/data \\
   ghcr.io/molos-app/molos:latest`}
