@@ -7,11 +7,12 @@ description: "Health and wellness tracking system - comprehensive health metrics
 
 The Health module provides comprehensive health and wellness tracking capabilities. This is the main health module that works alongside the Health Tracker for complete wellness management.
 
-##  Overview
+## Overview
 
 **Location:** `/health`
 
 This module provides:
+
 - Health metrics tracking
 - Wellness monitoring
 - Integration with Health Tracker
@@ -32,7 +33,7 @@ This module provides:
 └── +page.svelte
 ```
 
-##  Integration
+## Integration
 
 - **Health Tracker**: Detailed activity and measurement tracking
 - **Goals Module**: Health-specific objectives
@@ -41,4 +42,4 @@ This module provides:
 
 ---
 
-*See [Health Tracker](/docs/modules/health) for detailed documentation.*
+_See [Health Tracker](/docs/modules/health) for detailed documentation._

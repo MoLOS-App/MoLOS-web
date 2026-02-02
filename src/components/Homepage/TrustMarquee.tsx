@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
-import styles from '../../pages/index.module.css';
+import React from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import styles from "../../pages/index.module.css";
 
 function TrustMarquee() {
   const shouldReduceMotion = useReducedMotion();
@@ -13,7 +13,7 @@ function TrustMarquee() {
       "Productivity Hackers",
       "Modular Architects",
       "Local-First Devs",
-      "Autonomous Agents"
+      "Autonomous Agents",
     ],
     [
       "Sovereign Individuals",
@@ -34,7 +34,7 @@ function TrustMarquee() {
       "Cyber-Pluralists",
       "The Homelab Crowd",
       "Data Minimalists",
-      "Web3 Critics"
+      "Web3 Critics",
     ],
     [
       "Seriously, why are you still here",
@@ -105,7 +105,7 @@ function TrustMarquee() {
       "men are in the dark.",
       "SHREK",
       "This is the part where you run away. ",
-    ]
+    ],
   ].flat();
 
   return (
@@ -113,9 +113,13 @@ function TrustMarquee() {
       <motion.div
         className={styles.marqueeContent}
         initial={{ x: 0 }}
-        animate={shouldReduceMotion ? {} : {
-          x: [0, -1000],
-        }}
+        animate={
+          shouldReduceMotion
+            ? {}
+            : {
+                x: [0, -1000],
+              }
+        }
         transition={{
           x: {
             repeat: Infinity,
@@ -127,7 +131,7 @@ function TrustMarquee() {
       >
         {[...items, ...items, ...items].map((item, idx) => (
           <div key={idx} className={styles.marqueeItem}>
-            <span style={{ color: 'var(--ifm-color-primary)' }}>✦</span> {item}
+            <span style={{ color: "var(--ifm-color-primary)" }}>✦</span> {item}
           </div>
         ))}
       </motion.div>

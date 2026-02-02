@@ -1,20 +1,32 @@
 .footerCTA {
-  background: linear-gradient(135deg, rgba(0, 112, 243, 0.15) 0%, rgba(0, 112, 243, 0.05) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 112, 243, 0.15) 0%,
+    rgba(0, 112, 243, 0.05) 100%
+  );
   border-top: 1px solid rgba(0, 112, 243, 0.1);
   border-bottom: 1px solid rgba(0, 112, 243, 0.1);
   padding: 4rem 0;
   text-align: center;
 }
 
-[data-theme='light'] .footerCTA {
-  background: linear-gradient(135deg, rgba(0, 112, 243, 0.08) 0%, rgba(0, 112, 243, 0.02) 100%);
+[data-theme="light"] .footerCTA {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 112, 243, 0.08) 0%,
+    rgba(0, 112, 243, 0.02) 100%
+  );
 }
 
 .ctaContent h3 {
   font-size: 2rem;
   font-weight: 800;
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, var(--ifm-font-color-base) 30%, var(--ifm-color-primary) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--ifm-font-color-base) 30%,
+    var(--ifm-color-primary) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -89,7 +101,11 @@
   font-size: 1.5rem;
   font-weight: 800;
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, var(--ifm-font-color-base) 30%, var(--ifm-color-primary) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--ifm-font-color-base) 30%,
+    var(--ifm-color-primary) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

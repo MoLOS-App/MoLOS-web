@@ -42,6 +42,7 @@ import TabItem from '@theme/TabItem';
     :::tip
     Replace `YOUR_SECRET_HERE_DONT_FORGET_THAT` with the output of `openssl rand -base64 32`
     :::
+
   </TabItem>
 
   <TabItem value="docker" label="Docker">
@@ -63,6 +64,7 @@ import TabItem from '@theme/TabItem';
     :::note
     This basic setup is perfect for testing MoLOS. For persistent data, use Docker Compose (tab on the right ->).
     :::
+
   </TabItem>
 </Tabs>
 

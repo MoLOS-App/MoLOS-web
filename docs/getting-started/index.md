@@ -4,11 +4,9 @@
   <img src="/img/brand/logo_1024-removebg-preview.png" alt="MoLOS Logo" width="250" />
 </div>
 
-
 :::info
 MoLOS is currently in active development. We recommend using the Docker image for the most stable experience.
 :::
-
 
 Welcome to the MoLOS documentation. This guide will help you get up and running quickly.
 

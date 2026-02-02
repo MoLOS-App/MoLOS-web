@@ -184,15 +184,15 @@ Ask questions that include a goal, a time window, or a constraint. The Architect
 
 ## Module cheat sheet
 
-| Module | What it brings |
-|--------|----------------|
-| Tasks | Action steps, projects, deadlines |
-| Goals | Targets, milestones, timelines |
-| Health | Workouts, trends, recovery signals |
-| Meals | Nutrition context, intake patterns |
-| Notes | Friction, ideas, quick context |
-| Calendar | Time reality, gaps, conflicts |
-| Dashboard | Trends, snapshots, reality checks |
+| Module    | What it brings                     |
+| --------- | ---------------------------------- |
+| Tasks     | Action steps, projects, deadlines  |
+| Goals     | Targets, milestones, timelines     |
+| Health    | Workouts, trends, recovery signals |
+| Meals     | Nutrition context, intake patterns |
+| Notes     | Friction, ideas, quick context     |
+| Calendar  | Time reality, gaps, conflicts      |
+| Dashboard | Trends, snapshots, reality checks  |
 
 :::note
 Every answer can lead to action. The Architect can propose tasks, timelines, or a quick dashboard view and ask if you want it created.

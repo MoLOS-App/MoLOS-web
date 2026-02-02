@@ -7,11 +7,12 @@ description: "Task and project management system with areas, daily logs, and wor
 
 The Tasks module is a comprehensive task and project management system that helps you organize work across different areas, track daily progress, and manage complex projects efficiently.
 
-##  Overview
+## Overview
 
 **Location:** `/tasks`
 
 The Tasks module provides:
+
 - Area-based task organization
 - Daily workflow tracking
 - Project lifecycle management
@@ -44,24 +45,29 @@ The Tasks module provides:
 └── +page.svelte             # Landing page
 ```
 
-##  Core Features
+## Core Features
 
 ### Areas Management
+
 Organize tasks into contextual areas for better organization and focus.
 
 ### Daily Log
+
 Track daily activities, time spent, and reflect on productivity.
 
 ### Project Management
+
 Manage complex projects with milestones, dependencies, and resource allocation.
 
 ### Personal Task Management
+
 Handle individual tasks with priorities, due dates, and subtasks.
 
 ### Workflow Optimization
+
 Analyze patterns and optimize your task management workflow.
 
-##  Integration
+## Integration
 
 - **Finance Module**: Track financial tasks and bill payments
 - **Goals Module**: Break goals into actionable tasks
@@ -71,4 +77,4 @@ Analyze patterns and optimize your task management workflow.
 
 ---
 
-*Detailed documentation coming soon.*
+_Detailed documentation coming soon._

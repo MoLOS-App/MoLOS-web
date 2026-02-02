@@ -3,6 +3,7 @@
 This is the showcase and documentation website for MoLOS, built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
 Here you can find:
+
 - Comprehensive documentation for getting started with MoLOS
 - Blog posts about updates and features
 - Detailed guides for available modules like Tasks, Health, Finance, and more

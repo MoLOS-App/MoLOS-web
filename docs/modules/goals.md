@@ -7,11 +7,12 @@ description: "Goal tracking and progress management system for setting, monitori
 
 The Goals module is a comprehensive system for setting, tracking, and achieving personal and professional objectives through structured goal management and progress monitoring.
 
-##  Overview
+## Overview
 
 **Location:** `/goals`
 
 The Goals module provides:
+
 - SMART goal framework implementation
 - Progress tracking and visualization
 - Milestone management
@@ -42,24 +43,29 @@ The Goals module provides:
 └── +page.svelte             # Landing page
 ```
 
-##  Core Features
+## Core Features
 
 ### Goal Creation
+
 Create SMART goals (Specific, Measurable, Achievable, Relevant, Time-bound) with detailed specifications.
 
 ### Progress Tracking
+
 Monitor progress through daily check-ins, milestone completion, and trend analysis.
 
 ### Milestone Management
+
 Break down large goals into manageable milestones with deadlines and dependencies.
 
 ### Resource Management
+
 Track resources, materials, and tools needed to achieve your goals.
 
 ### Progress History
+
 Visualize your journey with historical charts and achievement timelines.
 
-##  Integration
+## Integration
 
 - **Tasks Module**: Break goals into actionable tasks
 - **Health Module**: Health-specific goal tracking
@@ -68,4 +74,4 @@ Visualize your journey with historical charts and achievement timelines.
 
 ---
 
-*Detailed documentation coming soon.*
+_Detailed documentation coming soon._

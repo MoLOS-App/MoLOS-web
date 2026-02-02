@@ -21,7 +21,7 @@
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+[data-theme="dark"] {
   --ifm-color-primary: #4dabf7;
   --ifm-color-primary-dark: #3d8fe0;
   --ifm-color-primary-darker: #3576c9;
@@ -37,7 +37,9 @@
 
 .molos-navbar-container {
   border-bottom: 1px solid var(--ifm-color-emphasis-200);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   position: fixed;
@@ -86,8 +88,14 @@ html {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 :root {
@@ -99,7 +107,7 @@ html {
   --molos-cookie-banner-shadow: rgba(122, 74, 28, 0.2);
 }
 
-[data-theme='dark'] {
+[data-theme="dark"] {
   --molos-cookie-banner-bg: #2a2016;
   --molos-cookie-banner-border: rgba(245, 202, 132, 0.2);
   --molos-cookie-banner-text: #f7d6a1;
@@ -152,7 +160,9 @@ html {
   border-radius: 999px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   white-space: nowrap;
 }
 
@@ -188,7 +198,12 @@ html {
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #f6d19a 0, #e6ab5b 55%, #c9853d 100%);
+  background: radial-gradient(
+    circle at 30% 30%,
+    #f6d19a 0,
+    #e6ab5b 55%,
+    #c9853d 100%
+  );
   box-shadow: inset -4px -6px 0 rgba(0, 0, 0, 0.08);
   flex: 0 0 auto;
   animation: molos-cookie-bounce 2.8s ease-in-out infinite;
@@ -204,7 +219,11 @@ html {
   background: #7a4b1f;
   top: 10px;
   left: 14px;
-  box-shadow: 12px 6px 0 #7a4b1f, 2px 16px 0 #7a4b1f, 16px 20px 0 #7a4b1f, -2px 24px 0 #7a4b1f;
+  box-shadow:
+    12px 6px 0 #7a4b1f,
+    2px 16px 0 #7a4b1f,
+    16px 20px 0 #7a4b1f,
+    -2px 24px 0 #7a4b1f;
 }
 
 .molos-cookie-banner__cookie::after {
@@ -225,7 +244,9 @@ html {
   background: var(--molos-cookie-banner-bg);
   opacity: 0;
   transform: scale(0.6);
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
 .molos-cookie-banner__bite.is-active {
@@ -254,35 +275,72 @@ html {
 }
 
 @keyframes molos-cookie-bounce {
-  0%, 100% { transform: rotate(-6deg) translateY(0); }
-  50% { transform: rotate(8deg) translateY(-6px); }
+  0%,
+  100% {
+    transform: rotate(-6deg) translateY(0);
+  }
+  50% {
+    transform: rotate(8deg) translateY(-6px);
+  }
 }
 
 @keyframes molos-banner-in {
-  from { opacity: 0; transform: translateY(16px) scale(0.98); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 @keyframes molos-banner-out {
-  from { opacity: 1; transform: translateY(0) scale(1); }
-  to { opacity: 0; transform: translateY(16px) scale(0.98); }
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
 }
 
 @keyframes molos-banner-shatter {
-  0% { opacity: 1; transform: translateY(0) scale(1); }
-  30% { transform: translateY(-6px) rotate(-1deg) scale(1.02); }
-  100% { opacity: 0; transform: translateY(24px) rotate(2deg) scale(0.94); filter: blur(2px); }
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  30% {
+    transform: translateY(-6px) rotate(-1deg) scale(1.02);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(24px) rotate(2deg) scale(0.94);
+    filter: blur(2px);
+  }
 }
 
 @keyframes molos-cookie-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes molos-cookie-crack {
-  0% { transform: rotate(0deg) scale(1); }
-  40% { transform: rotate(8deg) scale(1.05); }
-  100% { transform: rotate(-12deg) scale(0.8); opacity: 0; }
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  40% {
+    transform: rotate(8deg) scale(1.05);
+  }
+  100% {
+    transform: rotate(-12deg) scale(0.8);
+    opacity: 0;
+  }
 }
 
 @media (max-width: 640px) {

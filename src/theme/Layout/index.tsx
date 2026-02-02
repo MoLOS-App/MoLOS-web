@@ -1,8 +1,8 @@
-import React, { type ReactNode } from 'react';
-import Layout from '@theme-original/Layout';
-import type LayoutType from '@theme/Layout';
-import type { WrapperProps } from '@docusaurus/types';
-import CookieBanner from '../../components/CookieBanner';
+import React, { type ReactNode } from "react";
+import Layout from "@theme-original/Layout";
+import type LayoutType from "@theme/Layout";
+import type { WrapperProps } from "@docusaurus/types";
+import CookieBanner from "../../components/CookieBanner";
 
 type Props = WrapperProps<typeof LayoutType>;
 

@@ -1,22 +1,40 @@
-import React, { useMemo, useState, useEffect } from 'react';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Heading from '@theme/Heading';
-import { Shield, Bot, Layers, Home as HomeIcon, CheckCircle2 } from 'lucide-react';
-import { motion, useSpring, useMotionValue, AnimatePresence, useReducedMotion } from 'framer-motion';
-import { fadeInVariants, staggerContainerVariants, scaleUpVariants } from '../../theme/motion';
+import React, { useMemo, useState, useEffect } from "react";
+import Link from "@docusaurus/Link";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import Heading from "@theme/Heading";
+import {
+  Shield,
+  Bot,
+  Layers,
+  Home as HomeIcon,
+  CheckCircle2,
+} from "lucide-react";
+import {
+  motion,
+  useSpring,
+  useMotionValue,
+  AnimatePresence,
+  useReducedMotion,
+} from "framer-motion";
+import {
+  fadeInVariants,
+  staggerContainerVariants,
+  scaleUpVariants,
+} from "../../theme/motion";
 
-import styles from '../../pages/index.module.css';
+import styles from "../../pages/index.module.css";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   const shouldReduceMotion = useReducedMotion();
-  
+
   const secret = useMemo(() => {
-    if (typeof window !== 'undefined' && window.crypto) {
-      return Array.from(crypto.getRandomValues(new Uint8Array(32)), byte => byte.toString(16).padStart(2, '0')).join('');
+    if (typeof window !== "undefined" && window.crypto) {
+      return Array.from(crypto.getRandomValues(new Uint8Array(32)), (byte) =>
+        byte.toString(16).padStart(2, "0"),
+      ).join("");
     }
-    return 'development_secret_key_here';
+    return "development_secret_key_here";
   }, []);
 
   const [copied, setCopied] = useState(false);
@@ -40,7 +58,9 @@ function HomepageHeader() {
   const springX = useSpring(mouseX, springConfig);
   const springY = useSpring(mouseY, springConfig);
 
-  const [meteorites, setMeteorites] = useState<{ id: number; x: number; y: number; angle: number }[]>([]);
+  const [meteorites, setMeteorites] = useState<
+    { id: number; x: number; y: number; angle: number }[]
+  >([]);
 
   useEffect(() => {
     if (shouldReduceMotion) return;
@@ -49,25 +69,28 @@ function HomepageHeader() {
       mouseX.set(e.clientX - 300);
       mouseY.set(e.clientY - 300);
     };
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
 
     const interval = setInterval(() => {
       if (Math.random() > 0.7) {
         const id = Date.now();
-        setMeteorites(prev => [...prev, {
-          id,
-          x: Math.random() * 100,
-          y: Math.random() * 50,
-          angle: 135 + (Math.random() * 20 - 10)
-        }]);
+        setMeteorites((prev) => [
+          ...prev,
+          {
+            id,
+            x: Math.random() * 100,
+            y: Math.random() * 50,
+            angle: 135 + (Math.random() * 20 - 10),
+          },
+        ]);
         setTimeout(() => {
-          setMeteorites(prev => prev.filter(m => m.id !== id));
+          setMeteorites((prev) => prev.filter((m) => m.id !== id));
         }, 1000);
       }
     }, 2000);
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener("mousemove", handleMouseMove);
       clearInterval(interval);
     };
   }, [shouldReduceMotion, mouseX, mouseY]);
@@ -84,7 +107,7 @@ function HomepageHeader() {
             <div className={styles.floatingShape1}></div>
             <div className={styles.floatingShape2}></div>
             <div className={styles.floatingShape3}></div>
-            
+
             {/* Satellites */}
             {[...Array(5)].map((_, i) => (
               <motion.div
@@ -94,29 +117,29 @@ function HomepageHeader() {
                   x: [
                     Math.cos(i) * 200,
                     Math.cos(i + Math.PI) * 200,
-                    Math.cos(i + 2 * Math.PI) * 200
+                    Math.cos(i + 2 * Math.PI) * 200,
                   ],
                   y: [
                     Math.sin(i) * 100,
                     Math.sin(i + Math.PI) * 100,
-                    Math.sin(i + 2 * Math.PI) * 100
+                    Math.sin(i + 2 * Math.PI) * 100,
                   ],
                 }}
                 transition={{
                   duration: 20 + i * 5,
                   repeat: Infinity,
-                  ease: "linear"
+                  ease: "linear",
                 }}
                 style={{
-                  left: '50%',
-                  top: '40%',
+                  left: "50%",
+                  top: "40%",
                 }}
               />
             ))}
 
             {/* Meteorites */}
             <AnimatePresence>
-              {meteorites.map(m => (
+              {meteorites.map((m) => (
                 <motion.div
                   key={m.id}
                   className={styles.meteorite}
@@ -125,7 +148,7 @@ function HomepageHeader() {
                     x: `${m.x + 20}%`,
                     y: `${m.y + 20}%`,
                     opacity: [0, 1, 0],
-                    width: [0, 150, 0]
+                    width: [0, 150, 0],
                   }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
@@ -136,7 +159,7 @@ function HomepageHeader() {
           </>
         )}
       </div>
-      <motion.div 
+      <motion.div
         className="container"
         variants={staggerContainerVariants}
         initial="hidden"
@@ -149,25 +172,37 @@ function HomepageHeader() {
           variants={scaleUpVariants}
         />
         <motion.div variants={fadeInVariants}>
-          <Heading as="h1" className={styles.heroTitle} style={{ paddingBottom: "12px" }}>
+          <Heading
+            as="h1"
+            className={styles.heroTitle}
+            style={{ paddingBottom: "12px" }}
+          >
             The lazy way <br /> to stay organized
           </Heading>
         </motion.div>
         <motion.p className={styles.heroSubtitle} variants={fadeInVariants}>
           The definitive Modular Life Organization System (MoLOS)
         </motion.p>
-        <motion.p  variants={fadeInVariants}>
-          Created because you've got better things to do than spend hours optimizing your notes.
+        <motion.p variants={fadeInVariants}>
+          Created because you've got better things to do than spend hours
+          optimizing your notes.
         </motion.p>
 
-        <motion.div className={styles.heroFeatures} variants={staggerContainerVariants}>
+        <motion.div
+          className={styles.heroFeatures}
+          variants={staggerContainerVariants}
+        >
           {[
-            { icon: Shield, text: 'Privacy-First' },
-            { icon: Layers, text: 'Modular' },
-            { icon: Bot, text: 'AI-Native' },
-            { icon: HomeIcon, text: 'Self-hostable' }
+            { icon: Shield, text: "Privacy-First" },
+            { icon: Layers, text: "Modular" },
+            { icon: Bot, text: "AI-Native" },
+            { icon: HomeIcon, text: "Self-hostable" },
           ].map((feature, i) => (
-            <motion.div key={i} className={styles.heroFeature} variants={fadeInVariants}>
+            <motion.div
+              key={i}
+              className={styles.heroFeature}
+              variants={fadeInVariants}
+            >
               <feature.icon size={18} className="margin-right--xs" />
               <span>{feature.text}</span>
             </motion.div>
@@ -175,15 +210,14 @@ function HomepageHeader() {
         </motion.div>
 
         <motion.div className={styles.buttons} variants={fadeInVariants}>
-          <Link
-            className={styles.primaryButton}
-            to="/docs/getting-started">
+          <Link className={styles.primaryButton} to="/docs/getting-started">
             Quick Start
           </Link>
           <Link
             className={styles.secondaryButton}
-            target='_blank'
-            to="https://demo.molos.app">
+            target="_blank"
+            to="https://demo.molos.app"
+          >
             Live Demo
           </Link>
         </motion.div>
@@ -199,10 +233,25 @@ function HomepageHeader() {
         >
           <div className={styles.heroDockerHeader}>
             <div className={styles.terminalLeft}>
-              <span style={{ color: '#aaa', fontSize: '0.75rem', marginLeft: '0.5rem', fontFamily: 'var(--ifm-font-family-monospace)' }}>Quick Install</span>
+              <span
+                style={{
+                  color: "#aaa",
+                  fontSize: "0.75rem",
+                  marginLeft: "0.5rem",
+                  fontFamily: "var(--ifm-font-family-monospace)",
+                }}
+              >
+                Quick Install
+              </span>
             </div>
             <button onClick={copyCommand} className={styles.copyButton}>
-              {copied ? <><CheckCircle2 size={14} /> Copied</> : <>📋 Copy</>}
+              {copied ? (
+                <>
+                  <CheckCircle2 size={14} /> Copied
+                </>
+              ) : (
+                <>📋 Copy</>
+              )}
             </button>
           </div>
           <pre className={styles.heroDockerCode}>

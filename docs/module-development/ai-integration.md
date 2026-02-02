@@ -14,24 +14,24 @@ External modules can provide AI tools for the Architect Agent.
 Export `getAiTools(userId)` and return `ToolDefinition[]`.
 
 ```typescript
-import { TaskRepository } from '$lib/repositories/external_modules/MoLOS-Tasks/task-repository';
-import type { ToolDefinition } from '$lib/models/external_modules/MoLOS-Tasks';
-import { db } from '$lib/server/db';
+import { TaskRepository } from "$lib/repositories/external_modules/MoLOS-Tasks/task-repository";
+import type { ToolDefinition } from "$lib/models/external_modules/MoLOS-Tasks";
+import { db } from "$lib/server/db";
 
 export function getAiTools(userId: string): ToolDefinition[] {
-	const repo = new TaskRepository(db as any);
+  const repo = new TaskRepository(db as any);
 
-	return [
-		{
-			name: 'get_tasks',
-			description: 'Retrieve tasks for the current user.',
-			parameters: {
-				type: 'object',
-				properties: { limit: { type: 'number', default: 10 } }
-			},
-			execute: async (params) => repo.getByUserId(userId, params.limit)
-		}
-	];
+  return [
+    {
+      name: "get_tasks",
+      description: "Retrieve tasks for the current user.",
+      parameters: {
+        type: "object",
+        properties: { limit: { type: "number", default: 10 } },
+      },
+      execute: async (params) => repo.getByUserId(userId, params.limit),
+    },
+  ];
 }
 ```
 

@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   docusaurus:
@@ -17,10 +17,10 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.50'
+          cpus: "0.50"
           memory: 512M
         reservations:
-          cpus: '0.25'
+          cpus: "0.25"
           memory: 256M
     environment:
       - NGINX_WORKER_PROCESSES=auto

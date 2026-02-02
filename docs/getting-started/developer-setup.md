@@ -19,6 +19,6 @@ MoLOS is built for extensibility. If you're a developer, you'll love the clean a
 
 ---
 
-##  Contributing
+## Contributing
 
 We love contributors! Whether you're fixing a bug, adding a module, or improving documentation, your help is welcome. Check out our [Module Development Guide](/docs/module-development) to see how we build things.

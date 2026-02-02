@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
-const COOKIE_KEY = 'molos-cookie-banner-dismissed';
+const COOKIE_KEY = "molos-cookie-banner-dismissed";
 
 export default function CookieBanner(): JSX.Element | null {
   const [visible, setVisible] = useState(false);
@@ -25,7 +25,7 @@ export default function CookieBanner(): JSX.Element | null {
 
   const finalizeDismiss = () => {
     try {
-      window.localStorage.setItem(COOKIE_KEY, '1');
+      window.localStorage.setItem(COOKIE_KEY, "1");
     } catch {
       // Ignore storage errors; banner will reappear on refresh.
     }
@@ -42,9 +42,9 @@ export default function CookieBanner(): JSX.Element | null {
 
   const handleOk = () => {
     window.setTimeout(() => {
-      const target = document.getElementById('quick-install');
+      const target = document.getElementById("quick-install");
       if (target) {
-        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        target.scrollIntoView({ behavior: "smooth", block: "center" });
       }
     }, 450);
     handleDismiss();
@@ -65,7 +65,7 @@ export default function CookieBanner(): JSX.Element | null {
 
   return (
     <div
-      className={`molos-cookie-banner${exiting ? ' is-exiting' : ''}${shattering ? ' is-shattering' : ''}`}
+      className={`molos-cookie-banner${exiting ? " is-exiting" : ""}${shattering ? " is-shattering" : ""}`}
       role="region"
       aria-live="polite"
     >
@@ -79,7 +79,7 @@ export default function CookieBanner(): JSX.Element | null {
           {[0, 1, 2, 3].map((bite) => (
             <span
               key={bite}
-              className={`molos-cookie-banner__bite${bites > bite ? ' is-active' : ''}`}
+              className={`molos-cookie-banner__bite${bites > bite ? " is-active" : ""}`}
               aria-hidden="true"
             />
           ))}

@@ -7,16 +7,31 @@ sidebar_position: 1
 
 This guide covers external modules that live as separate git repos under `MoLOS/external_modules/`.
 
-## Required Workflow
+## Quick Start with CLI
+
+The fastest way to create a new module is using the built-in CLI:
+
+```bash
+# From the MoLOS root directory
+npm run module:create my-module --name "My Module" --author "Your Name" --description "My module description"
+
+# Or with all defaults
+npm run module:create my-module
+```
+
+This will create a complete module scaffold at `external_modules/my-module` with all necessary files and folders.
+
+## Manual Workflow
+
+If you prefer to start from the sample module manually:
 
 1. Create a new git repo.
 2. Clone the MoLOS main repo.
-3. Clone the new module into `MoLOS/external_modules/<ModuleId>`.
-4. Open your editor at the MoLOS root.
-5. Use `MoLOS-Sample-Module` or another working module as boilerplate.
-6. Copy the boilerplate into the new module git path.
-7. Run `npm run dev`.
-8. Start developing new modules.
+3. Clone `MoLOS-Sample-Module` or another working module as boilerplate.
+4. Copy the boilerplate into `MoLOS/external_modules/<ModuleId>`.
+5. Run `npm run modules:sync` to create symlinks and run migrations.
+6. Run `npm run dev`.
+7. Start developing your module.
 
 ## Development Map
 
@@ -26,4 +41,4 @@ This guide covers external modules that live as separate git repos under `MoLOS/
 4.  **[API Endpoints](./api-endpoints)**: Build SvelteKit server routes.
 5.  **[UI Development](./ui-development)**: Create routes, components, and stores.
 6.  **[Module Configuration](./configuration)**: Manifest + navigation config.
-9.  **[AI Integration](./ai-integration)**: Optional AI tools for the Architect Agent.
+7.  **[AI Integration](./ai-integration)**: Optional AI tools for the Architect Agent.

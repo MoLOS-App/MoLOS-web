@@ -7,11 +7,12 @@ description: "Nutrition and meal planning system for managing meals, recipes, sh
 
 The Meals module is a comprehensive nutrition and meal planning system designed to help you manage meals, organize recipes, plan shopping, and track workouts.
 
-##  Overview
+## Overview
 
 **Location:** `/meals`
 
 The Meals module provides:
+
 - Meal planning and recipe management
 - Shopping list generation
 - Workout tracking
@@ -41,24 +42,29 @@ The Meals module provides:
 └── +page.svelte             # Landing page
 ```
 
-##  Core Features
+## Core Features
 
 ### Meal Planning
+
 Plan weekly meals with nutritional balance and dietary requirements.
 
 ### Recipe Management
+
 Store and organize recipes with ingredients, instructions, and nutritional info.
 
 ### Shopping Lists
+
 Generate shopping lists from meal plans and recipes with smart categorization.
 
 ### Workout Tracking
+
 Track exercise routines, progress, and fitness goals.
 
 ### Nutrition Monitoring
+
 Monitor caloric intake and nutritional balance.
 
-##  Integration
+## Integration
 
 - **Health Module**: Nutrition data influences health metrics
 - **Tasks Module**: Schedule meal prep and shopping
@@ -67,4 +73,4 @@ Monitor caloric intake and nutritional balance.
 
 ---
 
-*Detailed documentation coming soon.*
+_Detailed documentation coming soon._
